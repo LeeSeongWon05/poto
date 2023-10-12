@@ -34,17 +34,11 @@ export default function Youtube() {
 
 					return (
 						<article key={idx}>
-							<div className='titBox'>
-								<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
-							</div>
-
-							<div className='conBox'>
-								<p>{desc.length > 180 ? desc.substr(0, 180) + '...' : desc}</p>
-								<span>{date.split('T')[0].split('-').join('.')}</span>
-							</div>
-
+							<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
+							<p>{desc.length > 180 ? desc.substr(0, 180) + '...' : desc}</p>
+							<span>{date.split('T')[0].split('-').join('.')}</span>
 							<div
-								className='picBox'
+								className='pic'
 								onClick={() => {
 									setIndex(idx);
 									setIsModal(true);
@@ -77,7 +71,6 @@ export default function Youtube() {
 	리액트에서 자식 컴포넌트에서는 직접적으로 부모 컴포넌트의 state값 변경이 불가
 	- 해결방법 부모의 state변경함수를 자식 컴포넌트로 전달
 	- 자식컴포넌트에서는 전달받은 state변경함수로 간접적으로 부모 state값 변경가능	
-
 	promsie .then구문을 좀더 구조적으로 짜는 방법 (async await) -> then구문을 쓸 필요가 없어짐
 	async await 사용조건
 	- promise반환함수를 wrapping처리
