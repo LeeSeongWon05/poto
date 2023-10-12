@@ -1,0 +1,73 @@
+@import '../members/reset';
+
+section {
+	width: 100%;
+	padding: 180px 0 150px;
+	background: #fff;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+
+		.title {
+			font: bold 50px/1 'arial';
+			color: black;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		> p {
+			font: 16px/1 'arial';
+			color: #888;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+
+		.wrap {
+			width: 100%;
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			article {
+				width: 280px;
+				border: 1px solid #ddd;
+				border-bottom: 1px solid #888;
+				margin-right: 20px;
+				float: left;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				.pic {
+					width: 100%;
+					height: 330px;
+					background: #666;
+					object-fit: cover;
+				}
+
+				.txtBox {
+					width: 100%;
+					padding: 40px 30px;
+					text-align: center;
+
+					h2 {
+						font: bold 18px/1 'arial';
+						color: #555;
+						margin-bottom: 20px;
+					}
+
+					p {
+						font: 14px/1.3 'arial';
+						color: #777;
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+}

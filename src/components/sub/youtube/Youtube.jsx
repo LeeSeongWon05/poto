@@ -11,7 +11,7 @@ export default function Youtube() {
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
 		const baseURL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-		const pid = 'PLHtvRFLN5v-W5bQjvyH8QTdQQhgflJ3nu';
+		const pid = 'PL9I0cGMkw7P6QXU1F9HI0JE370vyxQsV3';
 		const num = 5;
 		const resultURL = `${baseURL}?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
@@ -34,11 +34,17 @@ export default function Youtube() {
 
 					return (
 						<article key={idx}>
-							<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
-							<p>{desc.length > 180 ? desc.substr(0, 180) + '...' : desc}</p>
-							<span>{date.split('T')[0].split('-').join('.')}</span>
+							<div className='titBox'>
+								<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
+							</div>
+
+							<div className='conBox'>
+								<p>{desc.length > 180 ? desc.substr(0, 180) + '...' : desc}</p>
+								<span>{date.split('T')[0].split('-').join('.')}</span>
+							</div>
+
 							<div
-								className='pic'
+								className='picBox'
 								onClick={() => {
 									setIndex(idx);
 									setIsModal(true);
